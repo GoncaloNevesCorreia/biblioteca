@@ -1,5 +1,7 @@
 <?php
     require 'model/dbh.php';
+    session_start();
+    if (isset($_SESSION['user'])) { // Verifica se o user está autenticado
 
     if (isset($_POST['page_no']) && $_POST['page_no']!="") {
         $page_no = $_POST['page_no'];
@@ -121,3 +123,7 @@
     }
     header("Location: livros.php?page_no=$page_no");
     exit();
+} else {
+    header("Location: login.php");
+    exit();
+}

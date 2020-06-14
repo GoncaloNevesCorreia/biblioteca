@@ -1,11 +1,12 @@
 <?php
-
-if (isset($_GET['page_no']) && $_GET['page_no']!="") {
-    $page_no = $_GET['page_no'];
-} else {
-    $page_no = 1;
-}
-?>
+    session_start();
+    if (isset($_SESSION['user'])) { // Verifica se o user está autenticado
+    if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+        $page_no = $_GET['page_no'];
+    } else {
+        $page_no = 1;
+    }
+    ?>
 
 
 
@@ -16,51 +17,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 
 
 <div class="wrapper">
-    <div id="book-details">
-        <form action="process.php" method="POST">
-            <input type="hidden" id="id" name="id">
-            <input type="hidden" id="requisitavel" name="requisitavel">
-            <input type="hidden" id="page_no" name="page_no" value="<?php echo $page_no; ?>">
-
-            <div class="horizontal">
-                <div class="some-margin">
-                    <label for="isbn">ISBN:</label><br>
-                    <input type="text" minlength="13" maxlength="13" id="isbn" name="isbn"><br>
-                </div>
-                <div id="quantidade-wrapper">
-                    <label for="quantidade">Quantidade:</label><br>
-                    <input type="number" id="quantidade" name="quantidade" min="1"><br>
-                </div>
-
-                <div id="num-wrapper" class="hide">
-                    <label for="num">Número:</label><br>
-                    <input type="number" id="num" name="num" min="1"><br>
-                </div>
-            </div>
-
-            <label for="titulo">Título:</label><br>
-            <input type="text" id="titulo" name="titulo"><br>
-
-            <label for="autor">Autor:</label><br>
-            <input type="text" id="autor" name="autor"><br>
-
-            <label for="editora">Editora:</label><br>
-            <input type="text" id="editora" name="editora"><br>
-
-            <label for="genero">Gênero:</label><br>
-            <input type="text" id="genero" name="genero"><br>
-
-            <label for="edicao">Edição:</label><br>
-            <input type="text" id="edicao" name="edicao"><br>
-
-            <label for="estado">Estado do livro:</label><br>
-            <textarea name="estado" id="estado" wrap="off" cols="30" rows="10"></textarea>
-            
-
-            <button id="btnPost" name="add" type="submit">Adicionar</button>
-            <button type="button" class="hide" id="btnLimpar">Limpar</button>
-        </form>
-    </div>
+    
 
 
 
@@ -262,7 +219,58 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     </ul>
    
 </form>
+
+
+
+
+
 </div>
+
+<div id="book-details">
+        <form action="process.php" method="POST">
+            <input type="hidden" id="id" name="id">
+            <input type="hidden" id="requisitavel" name="requisitavel">
+            <input type="hidden" id="page_no" name="page_no" value="<?php echo $page_no; ?>">
+
+            <div class="horizontal">
+                <div class="some-margin">
+                    <label for="isbn">ISBN:</label><br>
+                    <input type="text" minlength="13" maxlength="13" id="isbn" name="isbn"><br>
+                </div>
+                <div id="quantidade-wrapper">
+                    <label for="quantidade">Quantidade:</label><br>
+                    <input type="number" id="quantidade" name="quantidade" min="1"><br>
+                </div>
+
+                <div id="num-wrapper" class="hide">
+                    <label for="num">Número:</label><br>
+                    <input type="number" id="num" name="num" min="1"><br>
+                </div>
+            </div>
+
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo"><br>
+
+            <label for="autor">Autor:</label><br>
+            <input type="text" id="autor" name="autor"><br>
+
+            <label for="editora">Editora:</label><br>
+            <input type="text" id="editora" name="editora"><br>
+
+            <label for="genero">Gênero:</label><br>
+            <input type="text" id="genero" name="genero"><br>
+
+            <label for="edicao">Edição:</label><br>
+            <input type="text" id="edicao" name="edicao"><br>
+
+            <label for="estado">Estado do livro:</label><br>
+            <textarea name="estado" id="estado" wrap="off" cols="30" rows="10"></textarea>
+            
+
+            <button id="btnPost" name="add" type="submit">Adicionar</button>
+            <button type="button" class="hide" id="btnLimpar">Limpar</button>
+        </form>
+    </div>
     <script>
 
         var rows = <?php echo json_encode($rows); ?>;
@@ -272,3 +280,11 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 
         <script src="Assets/js/livros.js"></script>
 </div>
+
+<?php
+    } else {
+        header("Location: login.php");
+        exit();
+    }
+
+?>

@@ -1,5 +1,6 @@
 <?php
-
+    session_start();
+    if (isset($_SESSION['user'])) { // Verifica se o user está autenticado
 if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     $page_no = $_GET['page_no'];
 } else {
@@ -93,3 +94,11 @@ if (isset($_GET["control"])) {
 </div>
 
 <script src="Assets/js/requisicoes.js"></script> 
+
+<?php
+    } else {
+        header("Location: login.php");
+        exit();
+    }
+
+?>

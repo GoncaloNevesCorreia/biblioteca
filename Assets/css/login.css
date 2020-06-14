@@ -1,0 +1,119 @@
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header div {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.form-background {
+    width: 425px;
+    height: 400px;
+    background: #394046;
+    border-radius: 8px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, .5);
+}
+
+.form-content {
+    padding: 2rem 1.5rem;
+}
+
+.text-1 {
+    display: flex;
+    justify-content: center;
+    font-family: Sriracha;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0px 1px 8px rgba(0,0,0,.5);
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 35px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0, .6);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+
+button {
+    background: transparent;
+    border: none;
+    border-radius: 50em;
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+
+
+
+.btnSubmit {
+    height: 50px;
+    width: 100%;
+    background: #009879;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+/* General */
+.wrapper {
+  margin: 4% auto;
+  text-align: center;
+}   
+
+@media (max-width: 499px) {
+    .form-wrapper {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .form-background {
+        width: 100%;
+    }
+
+    header {
+      margin-top: 10px;
+    }
+}

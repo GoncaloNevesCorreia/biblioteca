@@ -18,8 +18,11 @@
       <a class="navbar-brand" href="#">Gestão</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="livros.php">Adicionar livros</a></li>
-      <li><a href="requisicoes.php">Requisições</a></li>
+      <li <?php if($_SERVER['SCRIPT_NAME']=="/Biblioteca/livros.php") { ?>  class="active"   <?php   }  ?>><a href="livros.php">Adicionar livros</a></li>
+      <li <?php if($_SERVER['SCRIPT_NAME']=="/Biblioteca/requisicoes.php") { ?>  class="active"   <?php   }  ?> ><a href="requisicoes.php">Requisições</a></li>
+      
+      
+      <li style=""><a href="logout.php">Terminar Sessão</a></li>
     </ul>
   </div>
 </nav>
