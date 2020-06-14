@@ -21,7 +21,7 @@ input {-webkit-appearance: none; box-shadow: none !important; }
 
 #book-details {
     padding: 1rem 2rem;
-    width: 200px;
+    width: 300px;
     display: flex;
 }
 
@@ -296,4 +296,14 @@ tr[data-req="0"] {
   .wrapper-horizontal {
     display: flex;
     justify-content: space-around;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: radio;
+  }
+
+  .custom-radio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
