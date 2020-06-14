@@ -1,0 +1,299 @@
+html {
+  font-size:17.6px !important;
+}
+
+body {
+    font-size:17.6px !important;
+    font-family: 'Roboto', Arial;
+}
+
+input {-webkit-appearance: none; box-shadow: none !important; }
+:-webkit-autofill { color: #fff !important; }
+
+/*table, th, td {
+    border: 1px solid black;
+}*/
+
+
+
+
+
+
+#book-details {
+    padding: 1rem 2rem;
+    width: 200px;
+    display: flex;
+}
+
+#book-details textarea {
+  outline: none;
+  resize: none;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+#book-details > form label {
+    color: black;
+    font-weight: bold;
+    font-family: 'Sriracha', Arial;
+}
+
+#book-details > form input {
+    outline: none; 
+    height: 30px;
+    font-size: 1.1em;
+    border-radius: 16px;
+    border-color: black;
+    width: 150px;
+    transition: width 200ms ease;
+    padding: 5px 10px;
+}
+
+#book-details > form input:focus {
+    width: 200px;
+}
+
+#book-details > form button {
+    height: 70px;
+    width: 150px;
+    border-radius: 16px;
+    border:none;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+}
+
+tr[data-req="0"] {
+    background: rgb(216, 148, 148);
+}
+
+.row-selected {
+    background-color: lightblue !important;
+}
+
+.row-selected > td {
+    position: relative;
+}
+
+.row-selected > td > i {
+    color: #983c3c;
+    font-size: 1.4em;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: font 200ms ease;
+}
+
+.row-selected > td > i:hover {
+    font-size: 1.6em;
+}
+
+.hide {
+    display: none;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+#quantidade, #num {
+    width: 60px !important;
+}
+
+#quantidade:focus, #num:focus {
+    width: 80px !important;
+}
+
+.some-margin {
+    margin-right: 10px;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    margin: auto;
+    height: 80px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+#books td > label.container {
+  height: 25px;
+  width: 25px;
+}
+
+
+#books td > label.container > .checkmark{
+    transform: translate(-50%, -50%);
+}
+
+#books {
+    border-spacing: 0;
+}
+
+#books td {
+    padding: 5px 10px;
+    text-align: left;
+    max-width: 300px;
+    min-width: 50px;
+    word-wrap: break-word;
+}
+
+  
+  #books {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  #books thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  #books th,
+  #books td {
+    padding: 12px 15px;
+  }
+  
+  #books tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  #books tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  #books tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+
+
+.search-box {
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 0 10px;
+  width: fit-content;
+  position: relative;
+}
+
+
+
+.search-box:hover > #search {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-button {
+    border: none;
+    color: #e84118;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #search {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: white;
+    padding: 0;
+    font-size: 16px;
+    transition: 400ms;
+    line-height: 40px;
+    width: 20px;
+    transition: 400ms;
+  }
+
+  button:focus, button:active  {outline:0;}
+  
+  .wrapper-horizontal {
+    display: flex;
+    justify-content: space-around;
+  }
